@@ -10,6 +10,7 @@
 		"esModuleInterop": true,
 		"skipLibCheck": true,
 		"moduleResolution": "node16",
+		// abilitar importação de typescript
 		"allowImportingTsExtensions": true,
 		"noEmit": true
 	},

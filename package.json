@@ -13,7 +13,8 @@
 		"dev": "tsx --watch --env-file=.env src/server.ts"
 	},
 	"dependencies": {
-		"bcryptjs": "^2.4.3",
+		"@types/bcrypt": "^5.0.2",
+		"bcrypt": "^5.1.1",
 		"dotenv": "^16.4.7",
 		"express": "^4.21.2",
 		"fastify": "^5.2.0",
@@ -22,7 +23,6 @@
 	"devDependencies": {
 		"@biomejs/biome": "1.9.4",
 		"@prisma/client": "^6.1.0",
-		"@types/bcryptjs": "^2.4.6",
 		"@types/express": "^5.0.0",
 		"@types/node": "^22.10.2",
 		"prisma": "^6.1.0",
