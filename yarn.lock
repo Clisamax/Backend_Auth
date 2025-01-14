@@ -224,41 +224,41 @@
   resolved "https://registry.npmjs.org/@prisma/client/-/client-6.1.0.tgz"
   integrity sha512-AbQYc5+EJKm1Ydfq3KxwcGiy7wIbm4/QbjCKWWoNROtvy7d6a3gmAGkKjK0iUCzh+rHV8xDhD5Cge8ke/kiy5Q==
 
-"@prisma/debug@6.1.0":
-  version "6.1.0"
-  resolved "https://registry.npmjs.org/@prisma/debug/-/debug-6.1.0.tgz"
-  integrity sha512-0himsvcM4DGBTtvXkd2Tggv6sl2JyUYLzEGXXleFY+7Kp6rZeSS3hiTW9mwtUlXrwYbJP6pwlVNB7jYElrjWUg==
+"@prisma/debug@6.3.0-integration-simpler-typeinfo-query.1":
+  version "6.3.0-integration-simpler-typeinfo-query.1"
+  resolved "https://registry.yarnpkg.com/@prisma/debug/-/debug-6.3.0-integration-simpler-typeinfo-query.1.tgz#4d4ff74cb2ff5853dcd5c0d3d808cc1e293136c6"
+  integrity sha512-Ks0PyM9mXd6T4MNOD8AvdpKlJppjtVCPymrupuQik5ne0e9hU3wQ6mVxBUxNpBEAwgwozKcUKQe8gXyXo/aSDA==
 
-"@prisma/engines-version@6.1.0-21.11f085a2012c0f4778414c8db2651556ee0ef959":
-  version "6.1.0-21.11f085a2012c0f4778414c8db2651556ee0ef959"
-  resolved "https://registry.npmjs.org/@prisma/engines-version/-/engines-version-6.1.0-21.11f085a2012c0f4778414c8db2651556ee0ef959.tgz"
-  integrity sha512-PdJqmYM2Fd8K0weOOtQThWylwjsDlTig+8Pcg47/jszMuLL9iLIaygC3cjWJLda69siRW4STlCTMSgOjZzvKPQ==
+"@prisma/engines-version@6.3.0-6.integration-5-22-0-with-simplified-typeinfo-c7d99d9db5129d8b35986b8518c7f10bc8580e03":
+  version "6.3.0-6.integration-5-22-0-with-simplified-typeinfo-c7d99d9db5129d8b35986b8518c7f10bc8580e03"
+  resolved "https://registry.yarnpkg.com/@prisma/engines-version/-/engines-version-6.3.0-6.integration-5-22-0-with-simplified-typeinfo-c7d99d9db5129d8b35986b8518c7f10bc8580e03.tgz#df170a7e71eeeebba7c144af0159ee17869b0311"
+  integrity sha512-ywWi/ncjU7N7UDG1/PJfTLd9Blsr49LQgRmpMwSONk052XAkqEI9Q+54fgW5OK3cYdOTP4PXWMAhVNABPXNUGQ==
 
-"@prisma/engines@6.1.0":
-  version "6.1.0"
-  resolved "https://registry.npmjs.org/@prisma/engines/-/engines-6.1.0.tgz"
-  integrity sha512-GnYJbCiep3Vyr1P/415ReYrgJUjP79fBNc1wCo7NP6Eia0CzL2Ot9vK7Infczv3oK7JLrCcawOSAxFxNFsAERQ==
+"@prisma/engines@6.3.0-integration-simpler-typeinfo-query.1":
+  version "6.3.0-integration-simpler-typeinfo-query.1"
+  resolved "https://registry.yarnpkg.com/@prisma/engines/-/engines-6.3.0-integration-simpler-typeinfo-query.1.tgz#5e9b89a2730c528086272f13073d140e3378eb25"
+  integrity sha512-qBYsrOr7gi+kw4cH1hHlExWZkQij8qr6OZL+4ZoJhXHfovOaO7Q2zC7EFJWlhIOB5rdp31l50LcE6uRdLBHBOQ==
   dependencies:
-    "@prisma/debug" "6.1.0"
-    "@prisma/engines-version" "6.1.0-21.11f085a2012c0f4778414c8db2651556ee0ef959"
-    "@prisma/fetch-engine" "6.1.0"
-    "@prisma/get-platform" "6.1.0"
+    "@prisma/debug" "6.3.0-integration-simpler-typeinfo-query.1"
+    "@prisma/engines-version" "6.3.0-6.integration-5-22-0-with-simplified-typeinfo-c7d99d9db5129d8b35986b8518c7f10bc8580e03"
+    "@prisma/fetch-engine" "6.3.0-integration-simpler-typeinfo-query.1"
+    "@prisma/get-platform" "6.3.0-integration-simpler-typeinfo-query.1"
 
-"@prisma/fetch-engine@6.1.0":
-  version "6.1.0"
-  resolved "https://registry.npmjs.org/@prisma/fetch-engine/-/fetch-engine-6.1.0.tgz"
-  integrity sha512-asdFi7TvPlEZ8CzSZ/+Du5wZ27q6OJbRSXh+S8ISZguu+S9KtS/gP7NeXceZyb1Jv1SM1S5YfiCv+STDsG6rrg==
+"@prisma/fetch-engine@6.3.0-integration-simpler-typeinfo-query.1":
+  version "6.3.0-integration-simpler-typeinfo-query.1"
+  resolved "https://registry.yarnpkg.com/@prisma/fetch-engine/-/fetch-engine-6.3.0-integration-simpler-typeinfo-query.1.tgz#50110fc37f27ef7d6b385bca6fa3e255b3d942b2"
+  integrity sha512-mVdazcmvYVQzW3l3R1Gh9FDiTY4UTX/WPYW5AmIwbcOy3sFcg+HgrRcSyDErNx+NyOLrYINucuO72DjAgynRIA==
   dependencies:
-    "@prisma/debug" "6.1.0"
-    "@prisma/engines-version" "6.1.0-21.11f085a2012c0f4778414c8db2651556ee0ef959"
-    "@prisma/get-platform" "6.1.0"
+    "@prisma/debug" "6.3.0-integration-simpler-typeinfo-query.1"
+    "@prisma/engines-version" "6.3.0-6.integration-5-22-0-with-simplified-typeinfo-c7d99d9db5129d8b35986b8518c7f10bc8580e03"
+    "@prisma/get-platform" "6.3.0-integration-simpler-typeinfo-query.1"
 
-"@prisma/get-platform@6.1.0":
-  version "6.1.0"
-  resolved "https://registry.npmjs.org/@prisma/get-platform/-/get-platform-6.1.0.tgz"
-  integrity sha512-ia8bNjboBoHkmKGGaWtqtlgQOhCi7+f85aOkPJKgNwWvYrT6l78KgojLekE8zMhVk0R9lWcifV0Pf8l3/15V0Q==
+"@prisma/get-platform@6.3.0-integration-simpler-typeinfo-query.1":
+  version "6.3.0-integration-simpler-typeinfo-query.1"
+  resolved "https://registry.yarnpkg.com/@prisma/get-platform/-/get-platform-6.3.0-integration-simpler-typeinfo-query.1.tgz#7afe29ef3453f2b8531560e75bbd051ae3c393e9"
+  integrity sha512-Xbv31jXYQoZ9EAGhfblOln2UTher0jDlNJtoFTG3gQmfiOz5zMu2iGp+WDfpGZi/878T+U844RqiZIGQC4ROAg==
   dependencies:
-    "@prisma/debug" "6.1.0"
+    "@prisma/debug" "6.3.0-integration-simpler-typeinfo-query.1"
 
 "@types/bcrypt@^5.0.2":
   version "5.0.2"
@@ -1235,12 +1235,12 @@ pino@^9.0.0:
     sonic-boom "^4.0.1"
     thread-stream "^3.0.0"
 
-prisma@^6.1.0:
-  version "6.1.0"
-  resolved "https://registry.npmjs.org/prisma/-/prisma-6.1.0.tgz"
-  integrity sha512-aFI3Yi+ApUxkwCJJwyQSwpyzUX7YX3ihzuHNHOyv4GJg3X5tQsmRaJEnZ+ZyfHpMtnyahhmXVfbTZ+lS8ZtfKw==
+prisma@^6.3.0-integration-simpler-typeinfo-query.1:
+  version "6.3.0-integration-simpler-typeinfo-query.1"
+  resolved "https://registry.yarnpkg.com/prisma/-/prisma-6.3.0-integration-simpler-typeinfo-query.1.tgz#5992487070cd852ba52b85b72b8e3d5a858e2a96"
+  integrity sha512-6bucmiempynmvd7BPgOMWPLtSbhDFwWk6iv/WV/98Qk2Ew+Dzi+hgOZfg0+WDrVYmuNhlVSzlSrNMtjZUXuOuQ==
   dependencies:
-    "@prisma/engines" "6.1.0"
+    "@prisma/engines" "6.3.0-integration-simpler-typeinfo-query.1"
   optionalDependencies:
     fsevents "2.3.3"
 

@@ -1,6 +1,5 @@
-import { User, UserCreate } from '../interfaces/userInterface.ts';
-import { prisma } from '../prisma/client.ts';
-import { UserRepository } from './../interfaces/userInterface.ts';
+import { User, UserCreate, UserRepository } from '../../src/interfaces/userInterface.ts';
+import { prisma } from '../../src/prisma/client.ts';
 
 // aqui fica as operações de banco de dados 
 class UserRepositoryPrisma implements UserRepository {
@@ -15,6 +14,16 @@ class UserRepositoryPrisma implements UserRepository {
 		})
 		return result
 	}
+	async findBySap(sap: string): Promise<User | null> {
+		const result = await prisma.user.findUnique({
+			where: {
+				sap
+			}
+		})
+		return result || null
+
+	}
 }
 
 export { UserRepositoryPrisma };
+
