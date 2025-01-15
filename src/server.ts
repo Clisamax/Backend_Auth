@@ -2,6 +2,7 @@ import { config } from 'dotenv';
 import 'dotenv/config';
 import fastify, { FastifyInstance } from 'fastify';
 import { routes } from './user.routes.ts';
+import fastifyJwt from '@fastify/jwt';
 
 config();
 
@@ -12,6 +13,9 @@ const HOST = process.env.HOST
 
 app.register(routes, {
 	prefix: '/user'
+})
+app.register(fastifyJwt, {
+	secret: process.env.JWT_SECRET || 'default_secret'
 })
 
 app.listen({

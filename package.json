@@ -13,6 +13,7 @@
 		"dev": "tsx --watch --env-file=.env src/server.ts"
 	},
 	"dependencies": {
+		"@fastify/jwt": "^9.0.3",
 		"@types/bcrypt": "^5.0.2",
 		"bcrypt": "^5.1.1",
 		"dotenv": "^16.4.7",

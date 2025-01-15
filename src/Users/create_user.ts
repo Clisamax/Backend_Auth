@@ -16,10 +16,6 @@ export async function createUser(app: FastifyInstance) {
 			return reply.status(201).send(user);
 		} catch (error) {
 			reply.status(400).send(error);
-			// caso ocorra algum erro, responde com status 400 e o erro em JSON
-			// outra forma de lidar com erros é usar um middleware global para tratar todos os erros em uma unica função,
-			// por exemplo, usando o fastify-error-handler middleware.
-			// app.register(require('fastify-error-handler'));
 		}
 	})
 }
