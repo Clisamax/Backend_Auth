@@ -1,8 +1,6 @@
-import { FastifyInstance } from 'fastify';
 import { User, UserCreate, UserRepository } from '../interfaces/userInterface.ts';
 import { UserRepositoryPrisma } from '../repositories/user.repository.ts';
-import { hashPassword } from '../utils/hash.ts';
-import { verifyPassword } from '../utils/hash.ts';
+import { hashPassword, verifyPassword } from '../utils/hash.ts';
 
 
 
@@ -16,7 +14,7 @@ class UserUseCase {
 	}
 	async create({ name, sap, password }: UserCreate): Promise<User> {
 		const hashedPassword = await hashPassword(password)
-		const verifyUser = await this.UserRepository.findBySap(sap)
+		const verifyUser = await this.UserRepository.findBySeach(sap)
 		if (verifyUser) {
 			// caso o usuario ja exista, lança uma exceção com a mensagem "User already exists"	
 			throw new Error('User already exists')
@@ -26,19 +24,20 @@ class UserUseCase {
 	}
 
 	async login(sap: string, password: string): Promise<User | null> {
-		const user = await this.UserRepository.findBySap(sap)
+		const user = await this.UserRepository.findBySeach(sap)
 		if (!user) {
 			return null
 		}
+
 		const isValidPassword = await verifyPassword(password, user.password)
 		if (!isValidPassword) {
-      return null
-    }
+			return null
+		}
+
 		return user
-		
 	}
 	async delete(id: string): Promise<User | null> {
-		const user = await this.UserRepository.findBySap(id)
+		const user = await this.UserRepository.findBySeach(id)
 		if (!user) {
 			return null
 		}
@@ -46,15 +45,21 @@ class UserUseCase {
 		return user
 	}
 	async update(id: string, data: UserCreate): Promise<User | null> {
-		const user = await this.UserRepository.findBySap(id)
+		const user = await this.UserRepository.findBySeach(id)
 		if (!user) {
 			return null
 		}
-		const updatedUser = await this.UserRepository.createUser(data)
+
+		// Hash a senha se ela for fornecida
+		if (data.password) {
+			data.password = await hashPassword(data.password)
+		}
+
+		const updatedUser = await this.UserRepository.updateUser(id, data)
 		return updatedUser
 	}
-	
+
 }
 
-export {  UserUseCase };
+export { UserUseCase };
 

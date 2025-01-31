@@ -7,7 +7,7 @@
 	"license": "MIT",
 	"type": "module",
 	"engines": {
-		"node": "23.6.0"
+		"node": "23.6.1"
 	},
 	"scripts": {
 		"dev": "tsx --watch --env-file=.env src/server.ts"
@@ -26,7 +26,7 @@
 		"@prisma/client": "^6.1.0",
 		"@types/express": "^5.0.0",
 		"@types/node": "^22.10.2",
-		"prisma": "^6.3.0-integration-simpler-typeinfo-query.1",
+		"prisma": "^6.3.0",
 		"tsx": "^4.19.2",
 		"typescript": "^5.7.2"
 	}

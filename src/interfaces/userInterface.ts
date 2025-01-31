@@ -13,16 +13,16 @@ export interface UserCreate {
 	sap: string,
 	password: string,
 }
-export interface login{
+export interface login {
 	sap: string,
-  password: string,   // hash da senha
+	password: string,
 }
 
 // interface com os metodos http
 // interface recebendo os dados de UserCreate e retornando os dados junto com User
 export interface UserRepository {
 	createUser(data: UserCreate): Promise<User>;
-	findBySap(sap: string): Promise<User | null>;
-	loginUser(data: login ): Promise<User| null>;
+	findBySeach(sap: string): Promise<User | null>;
 	deleteUser(id: string): Promise<User | null>;
+	updateUser(id: string, data: UserCreate): Promise<User | null>;
 }

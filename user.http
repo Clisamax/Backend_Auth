@@ -1,0 +1,43 @@
+# Login User
+POST http://127.0.0.1:3336/login
+Content-Type: application/json
+
+{
+	"sap": "11043118",
+	"password": "Mka957351*"
+}
+
+###
+
+# Create User
+POST http://127.0.0.1:3336/create_user
+Content-Type: application/json
+
+{
+	"name": "clisamax",
+	"sap": "11043118",
+	"password": "Mka957351*"
+}
+
+###
+
+# delete user
+DELETE http://127.0.0.1:3336/delete_user
+Content-Type: application/json
+
+{
+	"id": "eb90b008-adac-4a16-a499-ce2b4685c10e",
+	"sap": "11043118"
+}
+
+###
+
+# update user
+PATCH http://127.0.0.1:3336/update_user
+Content-Type: application/json
+
+{
+	"name": "clisamax",
+	"sap": "11043119",
+	"password": "Mka957351***"
+}

@@ -1,8 +1,8 @@
+import fastifyJwt from '@fastify/jwt';
 import { config } from 'dotenv';
 import 'dotenv/config';
 import fastify, { FastifyInstance } from 'fastify';
 import { routes } from './user.routes.ts';
-import fastifyJwt from '@fastify/jwt';
 
 config();
 
@@ -11,12 +11,13 @@ export const app: FastifyInstance = fastify({ logger: true });
 const PORT = process.env.PORT;
 const HOST = process.env.HOST
 
-app.register(routes, {
-	prefix: '/user'
-})
+// Registrar JWT antes das rotas
 app.register(fastifyJwt, {
 	secret: process.env.JWT_SECRET || 'default_secret'
 })
+
+// Registrar todas as rotas sem prefix
+app.register(routes)
 
 app.listen({
 	host: typeof HOST === 'string' ? HOST : '0.0.0.0',
