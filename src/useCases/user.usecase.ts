@@ -1,4 +1,4 @@
-import { User, UserCreate, UserRepository } from '../interfaces/userInterface.ts';
+import { User, UserCreate, UserRepository, UserUpdate } from '../interfaces/userInterface.ts';
 import { UserRepositoryPrisma } from '../repositories/user.repository.ts';
 import { hashPassword, verifyPassword } from '../utils/hash.ts';
 
@@ -44,19 +44,37 @@ class UserUseCase {
 		await this.UserRepository.deleteUser(id)
 		return user
 	}
-	async update(id: string, data: UserCreate): Promise<User | null> {
-		const user = await this.UserRepository.findBySeach(id)
-		if (!user) {
-			return null
-		}
+	async update(id: string, data: UserUpdate): Promise<User | null> {
+		try {
+			// Verifica se o usuário existe
+			const existingUser = await this.UserRepository.findById(id)
+			if (!existingUser) {
+				throw new Error('Usuário não encontrado')
+			}
 
-		// Hash a senha se ela for fornecida
-		if (data.password) {
-			data.password = await hashPassword(data.password)
-		}
+			// Se estiver atualizando o SAP, verifica se já existe
+			if (data.sap && data.sap !== existingUser.sap) {
+				const userWithSap = await this.UserRepository.findBySeach(data.sap)
+				if (userWithSap) {
+					throw new Error('SAP já está em uso')
+				}
+			}
 
-		const updatedUser = await this.UserRepository.updateUser(id, data)
-		return updatedUser
+			// Hash a senha se ela for fornecida
+			if (data.password) {
+				data.password = await hashPassword(data.password)
+			}
+
+			const updatedUser = await this.UserRepository.updateUser(id, data)
+			if (!updatedUser) {
+				throw new Error('Erro ao atualizar usuário')
+			}
+
+			return updatedUser
+		} catch (error) {
+			console.error('Erro no update:', error)
+			throw error
+		}
 	}
 
 }

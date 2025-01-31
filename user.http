@@ -3,7 +3,7 @@ POST http://127.0.0.1:3336/login
 Content-Type: application/json
 
 {
-	"sap": "11043118",
+	"sap": "11043120",
 	"password": "Mka957351*"
 }
 
@@ -33,11 +33,12 @@ Content-Type: application/json
 ###
 
 # update user
-PATCH http://127.0.0.1:3336/update_user
+PUT http://127.0.0.1:3336/users/8c78ddbf-a0a2-4045-a00e-0f2f8b04249d
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzYXAiOiIxMTA0MzEyMCIsIm5hbWUiOiJNYXhfIiwidXNlcklkIjoiOGM3OGRkYmYtYTBhMi00MDQ1LWEwMGUtMGYyZjhiMDQyNDlkIiwiaWF0IjoxNzM4Mjk3NTk1LCJleHAiOjE3MzgzMjYzOTV9.5Ok59jw2VRmpDEaRG_PMqSKKpV8oCCsVU3loYFae3l8
 
 {
-	"name": "clisamax",
-	"sap": "11043119",
-	"password": "Mka957351***"
+    "name": "Max",
+    "sap": "11043120",
+    "password": "Mka957351***"
 }
