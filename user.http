@@ -3,7 +3,7 @@ POST http://127.0.0.1:3336/login
 Content-Type: application/json
 
 {
-	"sap": "11043120",
+	"sap": "11043119",
 	"password": "Mka957351*"
 }
 
@@ -15,7 +15,7 @@ Content-Type: application/json
 
 {
 	"name": "clisamax",
-	"sap": "11043118",
+	"sap": "11043122",
 	"password": "Mka957351*"
 }
 
@@ -24,21 +24,21 @@ Content-Type: application/json
 # delete user
 DELETE http://127.0.0.1:3336/delete_user
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzYXAiOiIxMTA0MzExOSIsIm5hbWUiOiJNYXgiLCJ1c2VySWQiOiJkMDJiZDMyNi1lMjkxLTQ0YjgtYjA4OS0xNTFmOTBkOTcwY2MiLCJpYXQiOjE3MzgzNjkzNjUsImV4cCI6MTczODM5ODE2NX0.OWLhyW4ynSXyhMv1q5Zh9Z55b5NaRoogCptZyIUphWo
 
 {
-	"id": "eb90b008-adac-4a16-a499-ce2b4685c10e",
-	"sap": "11043118"
+	"id": "6c25de2d-b66b-45a1-8b81-a6fe7f9e4e0a"
 }
 
 ###
 
 # update user
-PUT http://127.0.0.1:3336/users/8c78ddbf-a0a2-4045-a00e-0f2f8b04249d
+PUT http://127.0.0.1:3336/update_user/d02bd326-e291-44b8-b089-151f90d970cc
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzYXAiOiIxMTA0MzEyMCIsIm5hbWUiOiJNYXhfIiwidXNlcklkIjoiOGM3OGRkYmYtYTBhMi00MDQ1LWEwMGUtMGYyZjhiMDQyNDlkIiwiaWF0IjoxNzM4Mjk3NTk1LCJleHAiOjE3MzgzMjYzOTV9.5Ok59jw2VRmpDEaRG_PMqSKKpV8oCCsVU3loYFae3l8
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzYXAiOiIxMTA0MzExOSIsIm5hbWUiOiJNYXgiLCJ1c2VySWQiOiJkMDJiZDMyNi1lMjkxLTQ0YjgtYjA4OS0xNTFmOTBkOTcwY2MiLCJpYXQiOjE3MzgzNjk1MjAsImV4cCI6MTczODM5ODMyMH0.Ap3Hz_Rg1LysJOGSVW0TBf1p8ibu7JfnFNWckEXu7y8
 
 {
     "name": "Max",
-    "sap": "11043120",
-    "password": "Mka957351***"
+    "sap": "11043119",
+    "password": "Mka957351*"
 }

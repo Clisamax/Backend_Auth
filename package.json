@@ -13,6 +13,7 @@
 		"dev": "tsx --watch --env-file=.env src/server.ts"
 	},
 	"dependencies": {
+		"@fastify/cors": "^10.0.2",
 		"@fastify/jwt": "^9.0.3",
 		"@types/bcrypt": "^5.0.2",
 		"bcrypt": "^5.1.1",
@@ -24,6 +25,7 @@
 	"devDependencies": {
 		"@biomejs/biome": "1.9.4",
 		"@prisma/client": "^6.1.0",
+		"@types/cors": "^2.8.17",
 		"@types/express": "^5.0.0",
 		"@types/node": "^22.10.2",
 		"prisma": "^6.3.0",

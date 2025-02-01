@@ -7,15 +7,15 @@ export async function loginUser(app: FastifyInstance) {
 		try {
 			const userUseCase = new UserUseCase();
 			const { sap, password } = req.body;
-
+			//=> verifica se o sap e senhas existem
 			if (!sap || !password) {
 				return reply.status(400).send({
-					message: 'SAP e senha são obrigatórios'
+					message: 'SAP e Senha são obrigatórios'
 				});
 			}
 
 			const user = await userUseCase.login(sap, password);
-
+			//=> verifica se usuário existe
 			if (!user) {
 				return reply.status(401).send({
 					message: 'Credenciais inválidas'

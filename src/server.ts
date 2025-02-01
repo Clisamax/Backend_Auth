@@ -1,8 +1,11 @@
+import { cors } from 'cors';
+import { cors } from 'cors';
 import fastifyJwt from '@fastify/jwt';
 import { config } from 'dotenv';
 import 'dotenv/config';
 import fastify, { FastifyInstance } from 'fastify';
 import { routes } from './user.routes.ts';
+
 
 config();
 
@@ -10,6 +13,13 @@ export const app: FastifyInstance = fastify({ logger: true });
 
 const PORT = process.env.PORT;
 const HOST = process.env.HOST
+
+// habilitar qual front pode acessar
+app.register(cors, {
+  origin: true, // permite todas as origens
+  methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'],
+  credentials: true
+})
 
 // Registrar JWT antes das rotas
 app.register(fastifyJwt, {
