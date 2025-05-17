@@ -1,27 +1,20 @@
-import { FastifyInstance } from "fastify";
-import { verifyJwt } from "../middlewares/auth.ts";
-import { UserUseCase } from "../useCases/user.usecase.ts";
-
+import { FastifyInstance } from 'fastify';
+import { UserUserCase } from '../../modules/users/useCases/user.usecase';
+import { verifyJwt } from '../../shared/middlewares/auth';
 export async function deleteUser(app: FastifyInstance) {
-	app.delete<{ Body: { id: string } }>('/delete_user', {
-		preHandler: verifyJwt
-	}, async (req, reply) => {
+	app.delete<{ Body: { id: string } }>('/delete_user', { preHandler: verifyJwt }, async (req, reply) => {
 		try {
-			const { id } = req.body;
-
+			const { id } = req.body
 			if (!id) {
-				return reply.status(400).send({
-					message: 'ID do usuário é obrigatório'
-				});
+				return reply.status(400).send({ messege: 'ID do usuário é obrigatório' })
 			}
-
-			const userUseCase = new UserUseCase();
+			const userUserCase = new UserUserCase()
 
 			try {
-				await userUseCase.delete(id);
+				await userUserCase.delete(id)
 				return reply.status(200).send({
 					message: 'Usuário deletado com sucesso'
-				});
+				})
 			} catch (error) {
 				if (error instanceof Error) {
 					if (error.message === 'Usuário não encontrado') {
@@ -39,5 +32,6 @@ export async function deleteUser(app: FastifyInstance) {
 				message: 'Erro interno do servidor'
 			});
 		}
-	});
+	})
+
 }

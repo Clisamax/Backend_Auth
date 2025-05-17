@@ -1,22 +1,18 @@
-import { FastifyInstance } from "fastify";
-import { UserCreate } from "../interfaces/userInterface.ts";
-import { UserUseCase } from "../useCases/user.usecase.ts";
-import { verifyJwt } from "../middlewares/auth.ts";
+import { FastifyInstance } from "fastify"
+import { UserCreate } from "../../modules/users/dtos/user.dto"
+import { UserUserCase } from "../../modules/users/useCases/user.usecase"
 
-export async function createUser(app: FastifyInstance) {
+export const createUser = async (app: FastifyInstance) => {
 	app.post<{ Body: UserCreate }>('/create_user', async (req, reply) => {
 		try {
-			const { name, sap, password } = req.body;
-
-			// Validações básicas
+			const { name, sap, password } = req.body
 			if (!name || !sap || !password) {
 				return reply.status(400).send({
-					message: 'Nome, SAP e senha são obrigatórios'
-				});
+					message: 'Nome, Sap e Senha são obrigatórios'
+				})
 			}
-
-			const userUseCase = new UserUseCase();
-			const user = await userUseCase.create({ name, sap, password });
+			const userUserCase = new UserUserCase()
+			const user = await userUserCase.createUser({ name, sap, password })
 
 			return reply.status(201).send({
 				message: 'Usuário criado com sucesso',
@@ -25,7 +21,7 @@ export async function createUser(app: FastifyInstance) {
 					name: user.name,
 					sap: user.sap
 				}
-			});
+			})
 
 		} catch (error) {
 			if (error instanceof Error) {
@@ -42,9 +38,5 @@ export async function createUser(app: FastifyInstance) {
 				message: 'Erro interno do servidor'
 			});
 		}
-	});
+	})
 }
-
-
-
-

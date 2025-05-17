@@ -1,7 +1,7 @@
 import { FastifyInstance } from "fastify";
-import { UserUpdate } from "../interfaces/userInterface.ts";
-import { UserUseCase } from "../useCases/user.usecase.ts";
-import { verifyJwt } from "../middlewares/auth.ts";
+import { UserUpdate } from "../../modules/users/dtos/user.dto";
+import { UserUserCase } from "../../modules/users/useCases/user.usecase";
+import { verifyJwt } from "../../shared/middlewares/auth";
 
 export async function updateUser(app: FastifyInstance) {
 	app.put<{ Params: { id: string }, Body: UserUpdate }>('/update_user/:id', {
@@ -16,11 +16,11 @@ export async function updateUser(app: FastifyInstance) {
 				return reply.status(400).send({ message: 'ID é obrigatório' });
 			}
 
-			if (Object.keys(updateData).length === 0) {
+			if (Object.keys(updateData as object).length === 0) {
 				return reply.status(400).send({ message: 'Nenhum dado para atualizar' });
 			}
 
-			const userUseCase = new UserUseCase();
+			const userUseCase = new UserUserCase();
 			const updatedUser = await userUseCase.update(id, updateData);
 
 			return reply.status(200).send({

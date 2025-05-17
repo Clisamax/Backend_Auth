@@ -1,35 +1,33 @@
 {
-	"name": "backend_auth",
+	"name": "backend_maxcam",
 	"version": "1.0.0",
 	"main": "index.js",
-	"repository": "https://github.com/Clisamax/Backend_Auth.git",
-	"author": "Clisamax <99000834+Clisamax@users.noreply.github.com>",
 	"license": "MIT",
 	"type": "module",
 	"engines": {
 		"node": "23.6.1"
 	},
 	"scripts": {
-		"dev": "tsx --watch --env-file=.env src/server.ts"
+		"dev": "tsx --watch --env-file=.env src/config/server.ts",
+		"build": "tsc",
+		"start": "node dist/config/server.js"
 	},
 	"dependencies": {
-		"@fastify/cors": "^10.0.2",
-		"@fastify/jwt": "^9.0.3",
-		"@types/bcrypt": "^5.0.2",
 		"bcrypt": "^5.1.1",
 		"dotenv": "^16.4.7",
-		"express": "^4.21.2",
-		"fastify": "^5.2.0",
+		"expo": "^53.0.9",
+		"fastify": "^5.2.1",
 		"jsonwebtoken": "^9.0.2"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "1.9.4",
-		"@prisma/client": "^6.1.0",
-		"@types/cors": "^2.8.17",
-		"@types/express": "^5.0.0",
-		"@types/node": "^22.10.2",
-		"prisma": "^6.3.0",
+		"@biomejs/biome": "^1.9.4",
+		"@fastify/cors": "^10.0.2",
+		"@fastify/jwt": "^9.0.3",
+		"@prisma/client": "^6.7.0",
+		"@types/bcrypt": "^5.0.2",
+		"@types/node": "^22.13.0",
+		"prisma": "^6.7.0",
 		"tsx": "^4.19.2",
-		"typescript": "^5.7.2"
+		"typescript": "^5.7.3"
 	}
 }

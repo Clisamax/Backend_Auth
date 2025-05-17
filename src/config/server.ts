@@ -1,10 +1,9 @@
-import { cors } from 'cors';
-import { cors } from 'cors';
+import fastifyCors from '@fastify/cors';
 import fastifyJwt from '@fastify/jwt';
 import { config } from 'dotenv';
 import 'dotenv/config';
 import fastify, { FastifyInstance } from 'fastify';
-import { routes } from './user.routes.ts';
+import { Routes } from './routes/routes';
 
 
 config();
@@ -15,10 +14,10 @@ const PORT = process.env.PORT;
 const HOST = process.env.HOST
 
 // habilitar qual front pode acessar
-app.register(cors, {
-  origin: true, // permite todas as origens
-  methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'],
-  credentials: true
+app.register(fastifyCors, {
+	origin: true, // permite todas as origens
+	methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'],
+	credentials: true
 })
 
 // Registrar JWT antes das rotas
@@ -27,7 +26,7 @@ app.register(fastifyJwt, {
 })
 
 // Registrar todas as rotas sem prefix
-app.register(routes)
+app.register(Routes)
 
 app.listen({
 	host: typeof HOST === 'string' ? HOST : '0.0.0.0',
@@ -38,3 +37,4 @@ app.listen({
 		console.log('Error starting server:', err)
 		process.exit(1)
 	})
+

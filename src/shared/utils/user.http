@@ -1,0 +1,44 @@
+# Login User
+POST http://127.0.0.1:3336/login
+Content-Type: application/json
+
+{
+	"sap": "11043117",
+	"password": "Mka957351*"
+}
+
+###
+
+# Create User
+POST http://127.0.0.1:3336/create_user
+Content-Type: application/json
+
+{
+	"name": "clisamax",
+	"sap": "1104311",
+	"password": "Mka957351*"
+}
+
+###
+
+# delete user
+DELETE http://127.0.0.1:3336/delete_user
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzYXAiOiIxMTA0MzExOSIsIm5hbWUiOiJNYXgiLCJ1c2VySWQiOiJkMDJiZDMyNi1lMjkxLTQ0YjgtYjA4OS0xNTFmOTBkOTcwY2MiLCJpYXQiOjE3Mzg1NDA4ODcsImV4cCI6MTczODU0NDQ4N30.aoCfwE3MIpCvwAs02KNuEiwYpi80A_cCpqVYZrlaCaY
+
+{
+	"id": "65efc5dd-472f-4466-927f-b344f279227e"
+}
+
+###
+
+# update user
+PUT http://127.0.0.1:3336/update_user/d0c46b58-3a2f-4ea0-90d4-e357602f6fdd
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzYXAiOiIxMTA0MzExOSIsIm5hbWUiOiJNYXgiLCJ1c2VySWQiOiJkMDJiZDMyNi1lMjkxLTQ0YjgtYjA4OS0xNTFmOTBkOTcwY2MiLCJpYXQiOjE3Mzg1NDA4ODcsImV4cCI6MTczODU0NDQ4N30.aoCfwE3MIpCvwAs02KNuEiwYpi80A_cCpqVYZrlaCaY
+
+{
+    "name": "Clisamax",
+    "sap": "11043119",
+    "password": "Mka957351*"
+}

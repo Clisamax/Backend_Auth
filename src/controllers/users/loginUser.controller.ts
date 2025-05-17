@@ -1,11 +1,12 @@
 import { FastifyInstance } from "fastify";
-import { login } from "../interfaces/userInterface.ts";
-import { UserUseCase } from "../useCases/user.usecase.ts";
+import { login } from "../../modules/users/dtos/user.dto";
+import { UserUserCase } from "../../modules/users/useCases/user.usecase";
+
 
 export async function loginUser(app: FastifyInstance) {
 	app.post<{ Body: login }>('/login', async (req, reply) => {
 		try {
-			const userUseCase = new UserUseCase();
+			const userUseCase = new UserUserCase()
 			const { sap, password } = req.body;
 			//=> verifica se o sap e senhas existem
 			if (!sap || !password) {
@@ -26,11 +27,10 @@ export async function loginUser(app: FastifyInstance) {
 				{
 					sap: user.sap,
 					name: user.name,
-					userId: user.id
+					userId: user.id,
+					expiresIn: '1h'
 				},
-				{
-					expiresIn: '8h'
-				}
+
 			);
 
 			return reply.status(200).send({
