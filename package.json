@@ -5,12 +5,18 @@
 	"license": "MIT",
 	"type": "module",
 	"engines": {
-		"node": "23.6.1"
+		"node": "ˆ22.0.0"
 	},
 	"scripts": {
 		"dev": "tsx --watch --env-file=.env src/config/server.ts",
 		"build": "tsup src",
-		"start": "node dist/config/server.js"
+		"start": "node dist/config/server.js",
+		"vresel-build": "tsup src --format cjs --dts --out-dir dist",
+		"vercel-start": "node dist/config/server.js",
+		"prisma:generate": "prisma generate",
+		"prisma:migrate": "prisma migrate dev --name init",
+		"prisma:studio": "prisma studio",
+		"prisma:reset": "prisma migrate reset --force"
 	},
 	"dependencies": {
 		"bcrypt": "^5.1.1",
