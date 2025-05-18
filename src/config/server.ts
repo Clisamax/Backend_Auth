@@ -11,7 +11,6 @@ config();
 export const app: FastifyInstance = fastify({ logger: true });
 
 const PORT = process.env.PORT;
-const HOST = process.env.HOST
 
 // habilitar qual front pode acessar
 app.register(fastifyCors, {
@@ -29,7 +28,6 @@ app.register(fastifyJwt, {
 app.register(Routes)
 
 app.listen({
-	host: typeof HOST === 'string' ? HOST : '0.0.0.0',
 	port: typeof PORT === 'string' ? Number(PORT) : 3333
 })
 	.then((address) => console.log(`server is listening on port ${address}`))

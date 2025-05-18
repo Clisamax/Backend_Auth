@@ -5,18 +5,14 @@
 	"license": "MIT",
 	"type": "module",
 	"engines": {
-		"node": "22.0.0"
+		"node": "22.15.1"
 	},
 	"scripts": {
 		"dev": "tsx --watch --env-file=.env src/config/server.ts",
 		"build": "tsup src",
 		"start": "node dist/config/server.js",
-		"vresel-build": "tsup src --format cjs --dts --out-dir dist",
-		"vercel-start": "node dist/config/server.js",
-		"prisma:generate": "prisma generate",
-		"prisma:migrate": "prisma migrate dev --name init",
-		"prisma:studio": "prisma studio",
-		"prisma:reset": "prisma migrate reset --force"
+		"versel-build": "yarn prisma migrate deploy && yarn build",
+		"postinstall": "prisma generate"
 	},
 	"dependencies": {
 		"bcrypt": "^5.1.1",
@@ -29,10 +25,10 @@
 		"@biomejs/biome": "^1.9.4",
 		"@fastify/cors": "^10.0.2",
 		"@fastify/jwt": "^9.0.3",
-		"@prisma/client": "^6.7.0",
+		"@prisma/client": "^6.8.2",
 		"@types/bcrypt": "^5.0.2",
 		"@types/node": "^22.13.0",
-		"prisma": "^6.7.0",
+		"prisma": "^6.8.2",
 		"tsup": "^8.5.0",
 		"tsx": "^4.19.2",
 		"typescript": "^5.7.3"
