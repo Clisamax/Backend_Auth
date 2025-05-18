@@ -9,7 +9,7 @@
 	},
 	"scripts": {
 		"dev": "tsx --watch --env-file=.env src/config/server.ts",
-		"build": "tsc",
+		"build": "tsup src",
 		"start": "node dist/config/server.js"
 	},
 	"dependencies": {
@@ -27,6 +27,7 @@
 		"@types/bcrypt": "^5.0.2",
 		"@types/node": "^22.13.0",
 		"prisma": "^6.7.0",
+		"tsup": "^8.5.0",
 		"tsx": "^4.19.2",
 		"typescript": "^5.7.3"
 	}
